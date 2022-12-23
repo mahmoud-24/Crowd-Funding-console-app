@@ -11,27 +11,27 @@ def validate_name():
     return project_name
 
 def validate_details():
-    project_details = input(" Please Enter  project details : ").lower()
+    project_details = input("Please Enter  project details : ").lower()
     while True:
         if project_details.isalpha():
             break
         elif project_details == " ":
-            print(" Project details cannot be Empty ")
-            project_details = input(
-                "Please Enter  project details : ").lower()
+            print("Project details cannot be Empty ")
+            project_details = input("Please Enter project details : ").lower()
         else:
-            print("Project details cannot contain Digits , just use ',' ")
-            project_details = input(
-                "Please Enter  project details : ").lower()
+            print("Project details cannot contain Digits")
+            project_details = input("Please Enter  project details : ").lower()
     return project_details
 
+
+#validate total target number 
 def validate_total_target():
     while True:
         total_target = int(input(" Please Enter your Total Target : "))
         if total_target <= 250000:
             break
         else:
-            print("Please enter target number below 250000 EGP")
+            print(" Please enter target number below 250000")
             total_target  = input(" Please Enter your Total Target : ")
     return total_target 
 
@@ -39,32 +39,31 @@ def validate_date():
     while True:
         try:
             project_start_Date = input(
-                " Please Enter project start date in 'dd/mm/yyyy' format : ").split('/')
-            project_end_Date = input(
-                " Please Enter project end date in 'dd/mm/yyyy' format : ").split('/')
-            project_start_Date = datetime(int(project_start_Date[2]), int(
-                project_start_Date[1]), int(project_start_Date[0]))
+                " Please Enter project start date in 'dd-mm-yy' format : ").split('-')
+            project_end_Date = input(" Please Enter project end date in 'dd-mm-yy' format : ").split('-')
+            project_start_Date = datetime(int(project_start_Date[2]), int(project_start_Date[1]), int(project_start_Date[0]))
             try:
-                project_end_Date = datetime(int(project_end_Date[2]), int(
-                    project_end_Date[1]), int(project_end_Date[0]))
+                project_end_Date = datetime(int(project_end_Date[2]), int(project_end_Date[1]), int(project_end_Date[0]))
             except:
-                print("Input date is not valid")
+                print("input date is not valid")
                 break
         except:
-            print("Input date is not valid")
+            print("input date is not valid")
             break
         else:
             if project_start_Date < project_end_Date:
                 return [project_start_Date, project_end_Date]
             else:
-                print("Input date is not valid")
+                print("input date is not valid")
                 break
     return [project_start_Date, project_end_Date]
 
 def validate_fields(id, line):
     edited_line = []
-    fields = ["name", "details","target", "startdate", "enddate"]
-    edited_field = input("Enter the field name to be edited from [ 'name', 'details','target', 'startdate', 'enddate'] :").strip().lower()
+    fields = ["name", "details",
+              "target", "startdate", "enddate"]
+    edited_field = input(
+        "Enter the field name to be edited from [ 'name', 'details','target', 'startdate', 'enddate'] :").lower()
     if edited_field in fields:
         if edited_field == "name":
             projectname = validate_name()
@@ -72,19 +71,16 @@ def validate_fields(id, line):
             edited_line.append(line)
             return edited_line[0]
         elif edited_field == "details":
-
             project_details = validate_details()
             line[2] = project_details
             edited_line.append(line)
             return edited_line[0]
         elif edited_field == "target":
-
             target = str(validate_total_target())
             line[3] = target
             edited_line.append(line)
             return edited_line[0]
         elif edited_field == "startdate" or edited_field == "enddate":
-            
             project_start_Date = str(validate_date()[0])
             project_end_Date = str(validate_date()[1])
             line[4] = project_start_Date

@@ -34,7 +34,7 @@ def validate_password():
                 break
         else:
             print("Invalid password")
-            password = input(" Please Enter valid Password :  \n Password should contain\n -lowercase, uppercase, number,special-char and should be at least 8 digits ").lower()
+            password = input(" Please Enter valid Password :  \n Password should contain\n -lowercase, uppercase, number,special-char and should be at least 8 ").lower()
     return password
 def validate_phone():
     phone = input("Note --> Enter 11 Digits Starts [validated against Egyptian phone numbers] \n Please enter your number : ").lower()

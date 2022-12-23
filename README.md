@@ -24,7 +24,7 @@ Create a console app to start fundraise projects.
 - The user can create a project fund raise campaign which contains:
     - Title
     - Details
-    - Total target (i.e 250000 EGP)
+    - Total target [ maximum value is (i.e 250000 EGP) ]
     - Set start/end time for the campaign (validate the date formula)
 
 - User can view all projects
