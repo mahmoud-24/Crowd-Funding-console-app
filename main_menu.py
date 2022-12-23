@@ -5,7 +5,7 @@ from registration import*
 def register():
     print("\t\t\tWelcome to Crowd Funding Console App")
     print(" Select one of the following options :- \n")
-    choice = int(input("\t1) Please Enter 1 to login \n\t2) Please Enter 2 to Signup \n "))
+    choice = int(input("\t1) Please Enter 1 to login \n\t2) Please Enter 2 to Sign up \n "))
     try:
         choice == 1 or choice == 2
     except:

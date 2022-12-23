@@ -5,7 +5,7 @@ def edit_project(id):
         projects_file = open("projects.txt", 'r')
         file = ""
         project_name = input(
-            "PLease Enter your project name to Edit : ").strip().lower()
+            "PLease Enter your project name to Edit : ").lower()
         for line in projects_file.readlines():
             if id in line:
                 if line.split(":")[1] == project_name:

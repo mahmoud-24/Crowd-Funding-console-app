@@ -1,5 +1,6 @@
 from user_validation_function import *
 from login import *
+from main_menu import register
 
 def registration():
     fullname = validate_name()
@@ -19,16 +20,16 @@ def registration():
     with open("users.txt", 'a') as user:
         user.write(f"{phone}\n")
 
-    print(" Registration Successfully Done ")
-    choiceforlogin = input("Do you want to Login Now?[y/n] ").strip().lower()
+    print("Registration Successfully Done ")
+    choiceforlogin = input("Do you want to Login Now?[y/n] ").lower()
     try:
         choiceforlogin == "y" or choiceforlogin == "n"
     except:
-        print(" Please Enter valid char (y) or (n)")
+        print("Please Enter valid char (y) or (n)")
     else:
         if choiceforlogin == "y":
             login()
         elif choiceforlogin == "n":
-            print(" Goodbye")
+            register()
         else:
             print("Invalid input")

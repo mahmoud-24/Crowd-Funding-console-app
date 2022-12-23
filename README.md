@@ -37,4 +37,3 @@ Create a console app to start fundraise projects.
 
 
 - [Mahmoud Ibrahim Mohamed](https://github.com/mahmoud-24)
-

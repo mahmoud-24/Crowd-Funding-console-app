@@ -2,7 +2,7 @@ def deleteproject(id):
     while True:
         projectsfile = open("projects.txt", 'r')
         file = ""
-        projectname = input("Please Enter your Project name to delete it : ").strip().lower()
+        projectname = input("Please Enter your Project name to delete it : ").lower()
         for line in projectsfile.readlines():
             if id in line:
                 if line.split(":")[1] == projectname:

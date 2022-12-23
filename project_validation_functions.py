@@ -1,48 +1,47 @@
 import datetime
 
 def validate_name():
-    project_name = input(" Please Enter your Project Name : ").strip().lower()
+    project_name = input(" Please Enter your Project Name : ").lower()
     while True:
         if project_name.isalpha():
             break
         else:
             print("Project name cannot Contain spaces ")
-            project_name = input(" Please Enter your project name : ").strip().lower()
+            project_name = input(" Please Enter your project name : ").lower()
     return project_name
 
 def validate_details():
-    project_details = input(" Please Enter  project details : ").strip().lower()
+    project_details = input(" Please Enter  project details : ").lower()
     while True:
         if project_details.isalpha():
             break
         elif project_details == " ":
             print(" Project details cannot be Empty ")
             project_details = input(
-                "Please Enter  project details : ").strip().lower()
+                "Please Enter  project details : ").lower()
         else:
             print("Project details cannot contain Digits , just use ',' ")
             project_details = input(
-                "Please Enter  project details : ").strip().lower()
+                "Please Enter  project details : ").lower()
     return project_details
 
 def validate_total_target():
     while True:
         total_target = int(input(" Please Enter your Total Target : "))
-        if total_target >= 2000:
+        if total_target <= 250000:
             break
         else:
-            print(" Please enter target number above 2000")
+            print("Please enter target number below 250000 EGP")
             total_target  = input(" Please Enter your Total Target : ")
     return total_target 
-#Set start/end time for the campaign (validate the date formula) 
-#validate date function
+
 def validate_date():
     while True:
         try:
             project_start_Date = input(
-                " Please Enter project start date in 'dd-mm-yy' format : ").split('-')
+                " Please Enter project start date in 'dd/mm/yyyy' format : ").split('-')
             project_end_Date = input(
-                " Please Enter project end date in 'dd-mm-yy' format : ").split('-')
+                " Please Enter project end date in 'dd/mm/yyyy' format : ").split('-')
             project_start_Date = datetime(int(project_start_Date[2]), int(
                 project_start_Date[1]), int(project_start_Date[0]))
             try:
