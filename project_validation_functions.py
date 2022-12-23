@@ -39,9 +39,9 @@ def validate_date():
     while True:
         try:
             project_start_Date = input(
-                " Please Enter project start date in 'dd/mm/yyyy' format : ").split('-')
+                " Please Enter project start date in 'dd/mm/yyyy' format : ").split('/')
             project_end_Date = input(
-                " Please Enter project end date in 'dd/mm/yyyy' format : ").split('-')
+                " Please Enter project end date in 'dd/mm/yyyy' format : ").split('/')
             project_start_Date = datetime(int(project_start_Date[2]), int(
                 project_start_Date[1]), int(project_start_Date[0]))
             try:
